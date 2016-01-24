@@ -8,6 +8,7 @@ class SnapshotsController < ApplicationController
   def create
     fecha = Time.current.beginning_of_minute
     snapshot = Snapshot.create(created_at: fecha)
+    snapshot.set_id_from_created_at
     datos = Snapshot.get_from_source
     datos.each_with_index { |dato, i| snapshot.accion_en_snapshots << AccionEnSnapshot.crear_desde_dato(dato, i) }
 

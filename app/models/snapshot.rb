@@ -5,4 +5,9 @@ class Snapshot < ActiveRecord::Base
     require 'open-uri'
     JSON.load(open("http://localhost:3001/acciones_mas_populares.json"))
   end
+  
+  def set_id_from_created_at
+     self.id = created_at.strftime('%y%m%d%H%M')
+     save!
+  end
 end
