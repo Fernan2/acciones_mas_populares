@@ -1,0 +1,2 @@
+class AccionEnSnapshotsController < ApplicationController
+end

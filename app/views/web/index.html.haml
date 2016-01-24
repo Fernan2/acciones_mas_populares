@@ -1,0 +1,14 @@
+%h1 Snapshots
+%p= link_to 'Nuevo', new_snapshot_path
+
+%ul
+  - @snapshots.each do |snapshot|
+    %li
+      %b= link_to snapshot.created_at, snapshot_path(snapshot)
+
+%h1 Acciones
+
+%ul
+  - @acciones.each do |accion|
+    %li
+      %b= link_to accion.nombre, accion_path(accion)

@@ -1,0 +1,14 @@
+= link_to '<< Volver al inicio', root_path
+%h1 Snapshots de #{@accion.nombre}
+
+%table
+  %tr
+    - %w(fecha posicion recientes total).each do |titulo|
+      %th= titulo
+  - @accion.accion_en_snapshots.each do |accion_en_snapshot|
+    - snapshot = accion_en_snapshot.snapshot
+    %tr
+      %td= link_to snapshot.created_at, snapshot_path(snapshot)
+      %td= accion_en_snapshot.posicion
+      %td= accion_en_snapshot.visitas_recientes
+      %td= accion_en_snapshot.visitas_totales

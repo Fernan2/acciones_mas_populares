@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accion_id: 1
+  snapshot_id: 1
+
+two:
+  accion_id: 1
+  snapshot_id: 1

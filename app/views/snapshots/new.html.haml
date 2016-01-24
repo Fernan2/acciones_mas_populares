@@ -1,0 +1,15 @@
+%h1 Nuevo snapshot (vista previa)
+= button_to 'Crear', snapshots_path
+
+%table
+  %tr
+    - %w(nombre posicion recientes total).each do |titulo|
+      %td= titulo
+  - @datos.each_with_index do |dato, i|
+    %tr
+      %td= dato['name']
+      %td= i + 1
+      %td= dato['visitas_recientes']
+      %td= dato['visitas']
+
+= button_to 'Crear', snapshots_path

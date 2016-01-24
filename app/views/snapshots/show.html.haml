@@ -1,0 +1,15 @@
+= link_to '<< Volver al inicio', root_path
+%h1 Snapshot de #{@snapshot.created_at}
+%small= link_to 'Borrar snapshot', snapshot_path(@snapshot), method: :delete
+
+%table
+  %tr
+    - %w(nombre posicion recientes total).each do |titulo|
+      %th= titulo
+  - @snapshot.accion_en_snapshots.each do |accion_en_snapshot|
+    - accion = accion_en_snapshot.accion
+    %tr
+      %td= link_to accion.nombre, accion_path(accion)
+      %td= accion_en_snapshot.posicion
+      %td= accion_en_snapshot.visitas_recientes
+      %td= accion_en_snapshot.visitas_totales
