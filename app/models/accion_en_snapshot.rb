@@ -10,8 +10,8 @@ class AccionEnSnapshot < ActiveRecord::Base
 
   def self.crear_desde_dato(dato, i)
     create(accion: Accion.buscar_o_crear_desde_dato(dato),
-           posicion: i + 1,
+           posicion: dato['visitas'] || i + 1,
            visitas_recientes: dato['visitas_recientes'],
-           visitas_totales: dato['visitas'])
+           visitas_totales: dato['visitas'] || dato['visitas_totales'])
   end
 end

@@ -2,4 +2,6 @@
 
 %ul
   - @snapshots.each do |snapshot|
-    %li= snapshot
+    %li
+      = snapshot
+      = button_to 'Importar', importa_snapshot_path(dominio: @dominio, snapshot: snapshot)
