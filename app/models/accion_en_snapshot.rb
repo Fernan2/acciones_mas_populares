@@ -2,6 +2,10 @@ class AccionEnSnapshot < ActiveRecord::Base
   belongs_to :accion
   belongs_to :snapshot
 
+  scope :con_nombre_accion, lambda {
+    select(:id, :accion_id, :nombre, :posicion, :visitas_recientes, :visitas_totales).joins(:accion)
+  }
+
   delegate :nombre, to: :accion
 
   def self.crear_desde_dato(dato, i)
