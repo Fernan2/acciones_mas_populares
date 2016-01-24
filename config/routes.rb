@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :acciones
   resources :accion_en_snapshots
   resources :snapshots
+  get 'importar_snapshot/establecer_origen' => 'snapshot_importer#establecer_origen', as: 'establecer_origen'
+  post 'importar_snapshot/pide_lista_snapshots' => 'snapshot_importer#pide_lista_snapshots', as: 'pide_lista_snapshots'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,6 @@
+%h1 Descargar lista de snapshots
+
+= form_tag pide_lista_snapshots_path do
+  = label_tag 'Conectar a:'
+  = text_field_tag :dominio, '', placeholder: 'http://localhost:3000'
+  = submit_tag 'Obtener lista'

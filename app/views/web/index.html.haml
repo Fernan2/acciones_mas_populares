@@ -1,5 +1,7 @@
 %h1 Snapshots
-%p= link_to 'Nuevo', new_snapshot_path
+%p
+  = link_to 'Nuevo', new_snapshot_path
+  = link_to 'Importar', establecer_origen_path
 
 %ul
   - @snapshots.each do |snapshot|
