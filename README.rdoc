@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación está diseñada para seguir las acciones más populares en los foros
 
-Things you may want to cover:
+Características deseables:
 
-* Ruby version
+* Compartir snapshots entre instancias
 
-* System dependencies
+* Incluir la cotización con la popularidad
 
-* Configuration
+* Añadir gráficos
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Presentar el snapshot '1601241241' como '2016-01-24 12:41'
