@@ -1,6 +1,4 @@
 class SnapshotsController < ApplicationController
-  require 'open-uri'
-
   def new
     @datos = Snapshot.get_from_source
   end
@@ -18,9 +16,13 @@ class SnapshotsController < ApplicationController
   def show
     @snapshot = Snapshot.find(params[:id])
   end
-  
+
   def destroy
     Snapshot.find(params[:id]).destroy
     redirect_to root_path
+  end
+
+  def index
+    render text: Snapshot.order(:id).pluck(:id).join(',')
   end
 end
